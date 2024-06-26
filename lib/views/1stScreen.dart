@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:suit_test_app/provider/app_state.dart';
 import 'package:suit_test_app/themes/theme.dart';
+import 'package:suit_test_app/utils/palindrome_checker.dart';
 import 'package:suit_test_app/views/2ndScreen.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -107,9 +108,8 @@ class FirstScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    final appState = context.read<AppState>();
                     final isPalindrome =
-                        appState.isPalindrome(_sentenceController.text);
+                        PalindromeChecker.isPalindrome(_sentenceController.text);
                     showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
